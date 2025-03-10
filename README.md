@@ -27,4 +27,4 @@ Die 4 Farbräume sind:
 - HSL
 - YUV ()
 
-#### Kompression
+### Kompression
