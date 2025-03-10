@@ -9,4 +9,22 @@ Bit ist entweder 1 oder 0.
 - 32 Bits &rarr; ein DWORD
 - 64 Bits &rarr; ein QWORD
 
-Der Speicher hat bis zu 255 Byte Platz (= 1111 1111). Wenn es zu über 255 Byte kommt, ist es Datenüberlauf.
+#### Byte
+Grosse B steht für Byte (100M**B**). Ein Byte entpricht zwei Hex-Ziffern. 1 Byte = 256 Bitkombinationen.
+Der Speicher hat bis zu 255 Byte Platz (= 1111 1111). Wenn es zu über 255 Byte kommt, kommt es zu einem Datenüberlauf.
+
+### Codesysteme
+Text
+
+### Bildcodierung
+PPI = pixel per inch  
+DPI = dots per inch
+
+### Farbräume:
+Die 4 Farbräume sind:
+- RGB (red green blue)
+- CMYK (cyan magenta yellow keycolor=black)
+- HSL
+- YUV ()
+
+#### Kompression
