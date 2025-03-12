@@ -1,6 +1,6 @@
 # m114
 
-### Datenspeicher und Datenübertragung
+## Datenspeicher und Datenübertragung
 Digital gespeicherte Daten, die übertragen werden, sind in der Form von **Bit**.
 Bit ist entweder 1 oder 0.
 
@@ -25,34 +25,71 @@ n= Bit stellen
 **LSB**: least significant bit = niedrigstwertiges Bit entweder 0 oder -128
 
 **Zahlensystem** bin &rarr; dez = (dez num)v10 = (binary number * 2^position of binary number) + (bv1 * 2^1) + (bv2 * 2^2)... so for 1011 it will be 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0 = 8+0+2+1= 11  
-dez &rarr; bin = dez/2 rest is the binary numbers  
+dez &rarr; bin = the whole dez/2 rest is the binary numbers  | dez &rarr; hex = full dez num/16 devide each result until the rest is smaller than what youve been deviding by. Reverse Remainders und wandle um ins bin oder hex.  
 bin &rarr; hex = from lsb add up the bin stellen zusammen 0111 = 0 4 2 1 = 7  
-hex &rarr; dez = (n*16^3) + (n*16^2) + (n*16^1) + (n*16^0) potenz 0 gibt immer 1
+hex &rarr; dez = (n*16^3) + (n*16^2) + (n*16^1) + (n*16^0) potenz 0 gibt immer 1  
+for hex to bin convert it first to dez.
 
-### Codesysteme
-Code bedeutet eine Zuordnung oder Abbildung der Zeichen von der ersten "Character set" und dem zweiten "Character set" zu einander.
-
-#### Alphanumerische Code
-Dient dazu da um Text zu codieren.  
+## Codesysteme
+Es hat vier Arten von Codes: Numerische (alles in Binärischen Codes dargestellt), Alphanumerische (Zeichen in Bitfolgen darzustellen), Strich-code (Code auf verpackungen) etc. Code muss Umgekehrabbildung nach der Umwandlung/Verarbeitung zurück geben.  
+**Gleitkommazahlen** ermöglichen sehr grosse Zahlenformate mit grossem Wertebereich, wie single und double. Gleitkommaformat ist in IEEE-754 Format. Vorzeichen, Exponent, Mantisse  
+**Alphanumerische Code** Dient dazu da um Text zu codieren.  
 ASCII-Code:
+ISO-8859 and ANSI Code:
+Unicode UTF-8:
 
+**Vier UTF-8 Zeichen codes**: 
 
-### Bildcodierung
+## Bildcodierung
 PPI = pixel per inch  
 DPI = dots per inch
 
-### Farbräume:
+**Farbräume**
 Die 4 Farbräume sind:
 - RGB (red green blue)
 - CMYK (cyan magenta yellow keycolor=black)
 - HSL
 - YUV ()
 
-### Kompression
+**Vektorgrafik**
+
+**Alphakanal Transparenz**
+
+## Kompression
 Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten reduziert werden.  
+**Kompressionsrate K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
+**Kompressionsfaktor F** = Originalgrösse / Komprimierte Grösse
 
-Kompressionsrate **K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
-Kompressionsfaktor **F** = Originalgrösse / Komprimierte Grösse
+**VLC Variable Length Code**
+
+**RLC Run-Length-En/Coding**
+
+**LZW Lempel-Ziv-Welch**
 
 
-- Für Kalkulationen brauche den Scientific und Programmer Rechner auf Windows
+SI-Präfixe 10er System:  
+1024 → [Y] → Yotta → 1024 → 1'000'000'000'000'000'000'000'000 → Quadrillion  
+1021 → [Z] → Zetta → 1021 → 1'000'000'000'000'000'000'000 → Trilliarde  
+1018 → [E] → Exa  → 1'000'000'000'000'000'000 → Trillion  
+1015 → [P] → Peta  → 1'000'000'000'000'000 → Billiarde  
+1012 → [T] → Tera  → 1'000'000'000'000 → Billion  
+109 → [G] → Giga  → 1'000'000'000 → Milliarde  
+106 → [M] → Mega  → 1'000'000 → Million  
+103 → [k] → kilo → 1'000 → Tausend  
+100 → [-]  → 1 → Eins  
+10-3 → [m] → milli  → 0.001 → Tausendstel  
+10-6 → [µ] → mikro  → 0.000'001 → Millionstel  
+10-9 → [n] → nano  → 0.000'000'001 → Milliardstel  
+10-12 → [p] → piko  → 0.000'000'000'001 → Billionstel  
+10-15 → [f] → femto  → 0.000'000'000'000'001 → Billiardstel  
+10-18 → [a] → atto  → 0.000'000'000'000'000'001 → Trillionstel  
+
+IEC-Präfixe (2er System):  
+280 → [Yi] → Yobi → 1'208'925'819'614'629'174'706'176  
+270 → [Zi] → Zebi → 1'180'591'620'717'411'303'424  
+260 → [Ei] → Exbi → 1'152'921'504'606'846'976  
+250 → [Pi] → Pebi → 1'125'899'906'842'624  
+240 → [Ti] → Tebi → 1'099'511'627'776  
+230 → [Gi] → Gibi → 1'073'741'824  
+220 → [Mi] → Mebi → 1'048'576  
+210 → [Ki] → Kibi → 1'024  
