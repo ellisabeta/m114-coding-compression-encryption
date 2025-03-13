@@ -34,11 +34,20 @@ for hex to bin convert it first to dez.
 Es hat vier Arten von Codes: Numerische (alles in Binärischen Codes dargestellt), Alphanumerische (Zeichen in Bitfolgen darzustellen), Strich-code (Code auf verpackungen) etc. Code muss Umgekehrabbildung nach der Umwandlung/Verarbeitung zurück geben.  
 **Gleitkommazahlen** ermöglichen sehr grosse Zahlenformate mit grossem Wertebereich, wie single und double. Gleitkommaformat ist in IEEE-754 Format. Vorzeichen, Exponent, Mantisse  
 **Alphanumerische Code** Dient dazu da um Text zu codieren.  
-ASCII-Code:
-ISO-8859 and ANSI Code:
-Unicode UTF-8:
+&rarr; ASCII-Code: 7 Bit-Zeichenkodierung welches 128 Zeichen darstellen kann (American Standard Code for Information Interchange) umfassen das lateinische Alphabet, Sonderzeichen usw.  
+&rarr; Steuerzeichen (control characters) die wichtigsten zu merken sind: 08h= BS backspace, 09h= HT horizontal tab, 0Ah= LF line feed, 0Dh= CR carriage return, 1Bh= ESC escape, 20h= SP space, 30h= 0, 41h= A, 61h= a  
+&rarr; ISO-8859 and ANSI Code: ISO-8859 braucht 8 Bits und kann 255 Zeichen darstellen, doppelt so viel wie ASCII. Es hat verschiedene versionen von ISO für alle verschiedene Sprachen.  
+&rarr; Unicode UTF-8: Unicode kann maximal **4 Byte** lang sein. Verschiedene Zeichen im Bereich von U+00000000 bis U+FFFFFFFF. Unicode ist für alle denkbaren Zeichen dafür da. UTF-8 belegt pro Zeichen 1,2,3 oder 4 Byte. UTF-8 weniger speicheraufwendig. UTF-32 with 4 Bytes, UTF-16 2 or 4 Bytes, UTF-8 1-4 Bytes
 
-**Vier UTF-8 Zeichen codes**: 
+UTF-8 uses some more complex characters. To know which character is not as simple as the ASCII characters we should look at the binary.  
+
+**Vier UTF-8 Zeichen codes**: erster Byte ist ein Start-Byte in UTF-8. Fängt start-byte mit 0 one-byte Zeichen ist es ein einfaches ASCII Zeichen. Fängt es mit 110 two-byte Zeichen, 1110 three-byte Zeichen, 11110 four-byte Zeichen ist es ein Multi-byte Zeichen. 
+
+**Byte-Reihenfolge LE, BE** BE= Big-Endian, wird nach dem höchstwertigen Byte zuerst gespeichert. LE= Little-Endian, wird nach dem kleinstwertigsten Byte gespeichert. UTF-8-LE-BOM (das heisst nach dem kleinsten Byte gespeichert)
+
+**EAN-Code**
+**EAN-8**
+**QR-Code**
 
 ## Bildcodierung
 PPI = pixel per inch  
