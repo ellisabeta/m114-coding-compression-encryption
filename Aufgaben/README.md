@@ -27,7 +27,12 @@ Aufgabe 1:
  9. 127d = 0111 1110b
 
 ### Tag 2
-Aufgabe 1:
+Aufgabe 2:
+- 00111111100000000000000000000000 = 1.0
+- 
+- 0.1 = 00111101110011001100110011001101 &rarr; doch man kann es umwandeln ins binäre
+- 32Bit grösste GKZ = (2−2^−23)×2^127 = 3.4028235×10^38
+
 
 ### Tag 3
 Aufgabe 1:

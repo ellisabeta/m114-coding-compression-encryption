@@ -16,10 +16,15 @@ Umgekehrt **Anzahl Bit** Formel: **Anzahl Bit = round it up(Log"Bit Kombination"
 **Zahlenkreis** 
 Der Speicher hat bis zu 255 Byte Platz (= 1111 1111). Wenn es zu über 255 Byte kommt, kommt es zu einem Datenüberlauf. Daher bei 256 +1 Byte wächselt es zu 0 und ist beim Zahlenkreis wieder am Anfang. 
 
-**Signed and Unsigned** Wenn eine Zahl negativ ist, ist sie **signed**. Alle unsigned Zahlen sind positiv und gehen von 0 bis 255. Alle (Zweierkomplement) signed Zahlen sind negativ und gehen von -128 bis 127.  
+**Signed and Unsigned**   
+By default ist alles positiv definiert  
+&rarr; unsigned = positive Zahlen 0-255  
+&rarr; signed = positive und negative Zahlen -128-127 weil das erste Zeichen der Vorzeihen (-/+) ist.  
+unsigned overflow = binär ebene  
+signed overflow = dezimal ebene    
 n= Bit stellen
 *Signed Formel*: (min) -2^(n-1), (max) 2^(n-1)-1
-*Unsigned Formel*: (min) 0, (max) 2^n -1
+*Unsigned Formel*: (min) 0, (max) 2^n -1   
 
 **MSB**: most significant bit = höchswertige Bit entweder 255 oder 127
 **LSB**: least significant bit = niedrigstwertiges Bit entweder 0 oder -128
@@ -32,7 +37,9 @@ for hex to bin convert it first to dez.
 
 ## Codesysteme
 Es hat vier Arten von Codes: Numerische (alles in Binärischen Codes dargestellt), Alphanumerische (Zeichen in Bitfolgen darzustellen), Strich-code (Code auf verpackungen) etc. Code muss Umgekehrabbildung nach der Umwandlung/Verarbeitung zurück geben.  
-**Gleitkommazahlen** ermöglichen sehr grosse Zahlenformate mit grossem Wertebereich, wie single und double. Gleitkommaformat ist in IEEE-754 Format. Vorzeichen, Exponent, Mantisse  
+
+**Gleitkommazahlen** Gleitkommaformat ist in IEEE-754 Format. Vorzeichen, Exponent, Mantisse. Vorzeichen (-/+), Exponent 8 Bit lang, Mantisse 23 Zeichen. Exponent = signed, Exponent bias ist immer 127, weil es signed ist. Mantisse = unsigned (immer positiv).
+  
 **Alphanumerische Code** Dient dazu da um Text zu codieren.  
 &rarr; ASCII-Code: 7 Bit-Zeichenkodierung welches 128 Zeichen darstellen kann (American Standard Code for Information Interchange) umfassen das lateinische Alphabet, Sonderzeichen usw.  
 &rarr; Steuerzeichen (control characters) die wichtigsten zu merken sind: 08h= BS backspace, 09h= HT horizontal tab, 0Ah= LF line feed, 0Dh= CR carriage return, 1Bh= ESC escape, 20h= SP space, 30h= 0, 41h= A, 61h= a  
@@ -45,24 +52,28 @@ UTF-8 uses some more complex characters. To know which character is not as simpl
 
 **Byte-Reihenfolge LE, BE** BE= Big-Endian, wird nach dem höchstwertigen Byte zuerst gespeichert. LE= Little-Endian, wird nach dem kleinstwertigsten Byte gespeichert. UTF-8-LE-BOM (das heisst nach dem kleinsten Byte gespeichert)
 
-**EAN-Code**
-**EAN-8**
-**QR-Code**
+**EAN-Code** schwarz weisse Balken Code, 8-stellige oder 13-stellige Zahl. Letzte Zahle ist die Prüfziffer.  
+**EAN-8** Jede von den 8 Zahlen oder Zeichen besteht aus 7 gleich grossen Spalten (schwarz=1 weiss=0). Randzeichen 101 und Trennzeichen 01010. Die prüfziffer ist immer die letze.  
+**QR-Code** Verlust von 7% der Daten auf dem QR-Code (verschmutzt oder was anderes) führt zu Fehlerkorrektur-Level L. Bei 30% Beschädigung ist es Fehlerkorrektur-Level H.
 
 ## Bildcodierung
 PPI = pixel per inch  
-DPI = dots per inch
+DPI = dots per inch &rarr; beim Vierfarbendruck  
+px= Pixel aus rot, blau, grünen Farbpunkten /
+dot = bei Druckverfahren ein Farbpunkt entsteht Rastermuster mit verschiedenen Grössen und Anordungen.
 
-**Farbräume**
+**Farbräume** Farbe als Koordinatensystem oder mathematisches Modell dargestellt
 Die 4 Farbräume sind:
-- RGB (red green blue)
-- CMYK (cyan magenta yellow keycolor=black)
-- HSL
-- YUV ()
+- RGB (red, green, blue)
+- CMYK (cyan, magenta, yellow, keycolor=black)
+- HSL (hue=farbton, saturation=intensität, lightness)
+- YUV (luminanz Y, chrominanz V,U)  
+#FF0000 red, #00FF00 green, #0000FF blue, #FFFF00 yellow, #00FFFF cyan, #FF00FF pink, #000000 black, #FFFFFF white, #808080 grey
 
-**Vektorgrafik**
+**Vektorgrafik** bestehen aus Linien, Kreisen und Kurven, die verlustfrei skaliert werden können (beliebig vergrössert werden) im Gegensatz zu Rastergrafiken. Oft für Fonts verwendet bei Bildschirmen oder Druckern.
 
-**Alphakanal Transparenz**
+**Alphakanal Transparenz** Alphakanal bedeutet Durchsichtigkeit der einzelnen Pixel. Dazu wird ein zusätzlichen Byte verwendet.  
+Formate, die Alphakanal unterstützen: TIFF, TGA, PNG, PSD, GIF.
 
 ## Kompression
 Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten reduziert werden.  
@@ -75,30 +86,32 @@ Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten r
 
 **LZW Lempel-Ziv-Welch**
 
+-------------------------------------------------------------------------------------------
 
-SI-Präfixe 10er System:  
-1024 → [Y] → Yotta → 1024 → 1'000'000'000'000'000'000'000'000 → Quadrillion  
-1021 → [Z] → Zetta → 1021 → 1'000'000'000'000'000'000'000 → Trilliarde  
-1018 → [E] → Exa  → 1'000'000'000'000'000'000 → Trillion  
-1015 → [P] → Peta  → 1'000'000'000'000'000 → Billiarde  
-1012 → [T] → Tera  → 1'000'000'000'000 → Billion  
-109 → [G] → Giga  → 1'000'000'000 → Milliarde  
-106 → [M] → Mega  → 1'000'000 → Million  
-103 → [k] → kilo → 1'000 → Tausend  
-100 → [-]  → 1 → Eins  
-10-3 → [m] → milli  → 0.001 → Tausendstel  
-10-6 → [µ] → mikro  → 0.000'001 → Millionstel  
-10-9 → [n] → nano  → 0.000'000'001 → Milliardstel  
-10-12 → [p] → piko  → 0.000'000'000'001 → Billionstel  
-10-15 → [f] → femto  → 0.000'000'000'000'001 → Billiardstel  
-10-18 → [a] → atto  → 0.000'000'000'000'000'001 → Trillionstel  
+unsigned: 1111 0000 = 1*2^7 + 1*2^6 + 1*2^5 + 1*2^4 + 0*2^3 + 0*2^2 + 0*2^1 = 240  
+signed: 1111 0000 = -1*2^6 + -1*2^5 + -1*2^4 + 0*2^3 + 0*2^2 + 0*2^1 = -112  
+-1*2^7 + 1*2^6 + 1*2^5 + 1*2^4
 
-IEC-Präfixe (2er System):  
-280 → [Yi] → Yobi → 1'208'925'819'614'629'174'706'176  
-270 → [Zi] → Zebi → 1'180'591'620'717'411'303'424  
-260 → [Ei] → Exbi → 1'152'921'504'606'846'976  
-250 → [Pi] → Pebi → 1'125'899'906'842'624  
-240 → [Ti] → Tebi → 1'099'511'627'776  
-230 → [Gi] → Gibi → 1'073'741'824  
-220 → [Mi] → Mebi → 1'048'576  
-210 → [Ki] → Kibi → 1'024  
+**signed: 0 = 0*2^7 + Rest welche auf 1 gesetzt sind | 1 = -1*2^7 + Rest welche auf 1 gesetzt sind**
+
+TASK FROM ORIOL:
+alles signed
+0000 0000 = 0
+1000 0000 = -1*2^7 = -128
+1111 1111 = -1*2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0 = -1
+1010 1010 = -1*2^7 + 0 + 2^5 + 0 + 2^3 + 0 + 2^1 + 0 = -86
+0101 0001 = 0 + 2^6 + 0 + 2^4 + 0 + 0 + 0 + 2^0 = 81
+1101 0110 = -1*2^7 + 2^6 + 0 + 2^4 + 0 + 2^2 + 2^1 + 0 = -42
+
+Gleitkommazahl
+Zahl 2.0 in IEEE 754 Single Precision darstellen
+
+Vorzeichen 0
+Vorkommazahl = 10
+Nachkommazahl = 0
+
+Zusammengesetzt = 10.0 * 2^0 -> 1.00*2^1
+Exponent = 127 + 1 = 128 = 1000 0000
+Mantisse = 23 Mal eine 0
+
+0 1000 0000 23MAl 0
