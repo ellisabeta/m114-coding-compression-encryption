@@ -75,17 +75,6 @@ Die 4 Farbräume sind:
 **Alphakanal Transparenz** Alphakanal bedeutet Durchsichtigkeit der einzelnen Pixel. Dazu wird ein zusätzlichen Byte verwendet.  
 Formate, die Alphakanal unterstützen: TIFF, TGA, PNG, PSD, GIF.
 
-## Kompression
-Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten reduziert werden.  
-**Kompressionsrate K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
-**Kompressionsfaktor F** = Originalgrösse / Komprimierte Grösse
-
-**VLC Variable Length Code**
-
-**RLC Run-Length-En/Coding**
-
-**LZW Lempel-Ziv-Welch**
-
 -------------------------------------------------------------------------------------------
 
 unsigned: 1111 0000 = 1*2^7 + 1*2^6 + 1*2^5 + 1*2^4 + 0*2^3 + 0*2^2 + 0*2^1 = 240  
@@ -115,3 +104,34 @@ Exponent = 127 + 1 = 128 = 1000 0000
 Mantisse = 23 Mal eine 0
 
 0 1000 0000 23MAl 0
+
+------------------------------------------------------------------------------------------
+
+## Kompression
+Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten reduziert werden. Meistens um redundante Informationen zu entfernen. Umgekehrter Prozess ist Dekompression (Dekomprimierung).  
+Verlustfreie Komprimierung, ist wenn alle Originaldaten zurück gewonnen werden können. Komprimierung = weniger Platz.
+
+**Kompressionsrate K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
+**Kompressionsfaktor F** = Originalgrösse / Komprimierte Grösse
+
+**VLC Variable Length Code** unterschiedlich Codelängen von Zeichen werden minimiert. Ein Beispiel davon ist der Morsecode da es meistens eine kürzere Codelänge für alle Zeichen gebraucht wird.  
+Morsecode braucht es einen Trennzeichen oder Delimiter, der eine Pause sein würde.  
+
+Huffman-Code zuerst die Häufigkeit berechnen. 
+
+**RLC Run-Length-En/Coding**
+
+**LZW Lempel-Ziv-Welch**
+
+## Verlustbehaftete Kompression  
+
+**JPEG-Bildkomprimierung** Joint Photographic Experts Group. ISO/IEC 10918-1. JPEG Komprimierung erlaubt 90% Kompressionsrate ohne sichtbare Informationsverlust.
+
+Eine Artifakte bei Bildkomprimierung sind sichtbare Unvollkommenheiten (imperfections), die beim rendering entstehen.
+
+Die einfachsten Komprimierungsverfahren sind die Reduktion der Bildgrösse oder der Farbigkeit
+
+**Luminanz**
+**Chrominanz**
+
+**MPEG**
