@@ -71,3 +71,12 @@ Navigation to Analyse:
 ![screenshot](./images/navigation-toAnalyse-Caesar.png)
 Entschlüsselung an sich selber:
 ![screenshot](./images/encryptingWithAnalyse-Caesar.png)
+
+Aufgabe 2.2:
+1. Encrypt BEEf with keyword AFFE = BJJJ
+2. Encrypt WRKXQT with keyword SECRET = OVMOUM
+3. Entschlüsselter Text: "DER STAAT BIN ICH ES IST AEUSSERST SCHWIERIG ZU REDEN OHNE VIEL ZU SAGEN ICH MACHE MIT JEDER ERNENNUNG NEUNUNDNEUNZIG UNZUFRIEDENE UND EINEN UNDANKBAREN LOUIS XIV"
+![screenshot](./images/encrypted-sentence-2.2.png)
+
+Aufgabe 2.3:
+1. 

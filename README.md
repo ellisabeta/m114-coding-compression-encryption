@@ -157,6 +157,16 @@ Kryptografie ist die Wissenschaft der Verschlüsselung, Informationssicherheit u
 
 Mit dem selben Schlüssel verschlüsseln und entschlüsseln heisst Symetrische Verschlüsselungsverfahren.  
 
-**Cäsar-Verschlüsselung** (Rotationschiffre) jede lateinische Buchstaben des Alphabets wird **um N Stellen rotiert oder besser gesagt ersetzt**. Beispiel ROT-13, es verschieben sich Buchstaben um 13 nächsten Buchstaben.
+### Symetrische Verschlüsselungen
+
+**Cäsar-Verschlüsselung** (Rotationschiffre) jede lateinische Buchstaben des Alphabets wird **um N Stellen rotiert oder besser gesagt ersetzt**. Beispiel ROT-13, es verschieben sich Buchstaben um 13 nächsten Buchstaben. Cäsar Verschlüsselung ist monoalphabetischen Chiffrierverfahren, weil durch die selben Buchstaben ersetzt wird.
 
 Mit dem **CrypTool** zu **entschlüsseln**, Text eingeben. In den Tabs "Analyse/Symetrische Verschlüsselung (klassisch)/Cipher-Text Only/Caesar or whatever the algorithm is/Entschlüsseln where the Ermittelter Caesar-Schlüssel ist"
+
+**Vigenere-Verschlüsselung** ist ein polyalphabetisches Chiffrierverfahren, weil ein Buchstaben wird mit verschiedenen Buchstaben chiffriert. Daher ist es auch schwieriger zu entschlüsseln als Cäsar.  
+Ein Schlüssel, der meistens gleich lang wie der Klartext (plain understandable text) ist. Entschlüsseln mit einem Vigeneren-Quadrat, der Konzept, ist den Kreuzungspunkt zwei Buchstaben zu finden.
+Der selbe Key/Schlüssel beim Absender und Empfänger.
+
+**XOR-Stromchiffre** Exklusive-Oder-Verschlüsselung ist einfach und kann bei komplexeren Verfahren angewendet werden. Bit-für-bit ver-/entschlüsselt. Der Sender und Empfänger benutzen den selben Schlüssel in Form von binären Code. 
+XOR: A 0 0 1 1 | B 0 1 0 1 | Y 0 1 1 0  
+Sich das vertikal vorstellen. 00= 0, 11= 0, 01= 1, 10= 1  
