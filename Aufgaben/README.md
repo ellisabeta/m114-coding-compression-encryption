@@ -46,3 +46,28 @@ Binärer Baum:
 ![](images/binärer_baum_aufgabe2.png)
 
 Binärer Code erstellen:
+
+### Tag 6
+Aufgabe 1:
+1. - AES= is a symmetric block cipher. Symmetric-key algorithm meaning the same key is used for both encrypting and decrypting the data. (Advanced Encryption Standard)
+    - DES= is a symmetric-key block cipher algorithm similar to AES just smaller, which uses a key of 56-bit size. (Data Encryption Standard)
+    - IDEA= is a symmetric key block cipher encryption. IDEA uses a 128-bit key and operates on 64-bit blocks. (International Data Encryption Algorithm)
+    - RC4= is a stream cipher, it uses either 64 bit or 128-bit key sizes. (Rivest Cipher 4)
+    - XOR= cipher is an additive cipher, it combies plaintext with a secret key using the XOR, resulting in encrypted data that can only be decrypted using the same key. (Exclusive Or)
+    - RSA= is a public-key cryptosystem to encrypt and a private key to decrypt. (Rivest, Shamir, Adleman) 
+    - ECC using public and private keys for decryption and encryption (Elliptic Curve Cryptography)
+    - SHA creates a hash to encrypt data. Usually uses algorithms TLS, SSL, PGP, SSH etc. (Secure Hash Algorithms)
+2. Welche sind Blockchiffren? Antwort: AES, DES, IDEA
+
+Aufgabe 2.1:
+1. Here is an image of the tool and the encrypted sentence:
+![screenshot](./images/CrypTool-encrypted-sentence.png)
+
+2. Encypted sentence: "GHU DQJULII HUIROJW CXU WHHCHLW GLH ZXHUIHO VLQG JHIDOOHQ LFK NDP VDK XQG VLHJWH WHLOH XQG KHUUVFKH"  
+Decrypted sentence: "DER ANGRIFF ERFOLGT ZUR TEEZEIT DIE WUERFEL SIND GEFALLEN ICH KAM SAH UND SIEGTE TEILE UND HERRSCHE"  
+
+3. Der Analyse-Tool zeigt wie oft ein Buchstaben vorkommt. Dann kann man bestimmen mit welchem Schlüssel verschlüsselt wurde und diesen entschlüsseln.  
+Navigation to Analyse:
+![screenshot](./images/navigation-toAnalyse-Caesar.png)
+Entschlüsselung an sich selber:
+![screenshot](./images/encryptingWithAnalyse-Caesar.png)
