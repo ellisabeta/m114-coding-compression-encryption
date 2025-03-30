@@ -114,14 +114,35 @@ Verlustfreie Komprimierung, ist wenn alle Originaldaten zurück gewonnen werden 
 **Kompressionsrate K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
 **Kompressionsfaktor F** = Originalgrösse / Komprimierte Grösse
 
-**VLC Variable Length Code** unterschiedlich Codelängen von Zeichen werden minimiert. Ein Beispiel davon ist der Morsecode da es meistens eine kürzere Codelänge für alle Zeichen gebraucht wird.  
-Morsecode braucht es einen Trennzeichen oder Delimiter, der eine Pause sein würde.  
+**VLC Variable Length Code** unterschiedlich Codelängen von Zeichen werden minimiert.  
+Ein Beispiel davon ist der Morsecode da es meistens eine kürzere Codelänge für alle Zeichen gebraucht wird.  
+Das andere wäre der Huffman-Code.
 
-Huffman-Code zuerst die Häufigkeit berechnen. 
+**Huffman-Code berechnen**  
+Huffman-Code &rarr; Wort und Wort &rarr; Huffman-Code:  
+Wort zu Huffman code muss man einen binären Baum erstellen. Dabei muss man eine Codetabelle haben.  
+**Vorgehensweise**:
+1. zuerst die Häufigkeit der Buchstaben zählen.
+2. einen binären Baum erstellen nach der Häufigkeit, meistens links am häufigsten und rechts weniger häufigere Buchstaben
+3. Buchstaben, die am wenigsten vorkommen, werden zu einem Knoten "^", man addiert zusammen die Häufigkeit
+4. so geht man bis ganz zum letzten Buchstaben mit der grössten Häufigkeit
+5. dann die Äste beschriften, nach links ist 1 nach rechts 0
+6. dann erstellt man eine Codetabelle anhand dem Baum mit den binären Ästen  
+**Wichtig** bei Punkt 3. muss man zuerst immer die kleinste Häufigkeit zuerst zusammen zählen.
 
-**RLC Run-Length-En/Coding**
+**RLC Run-Length-En/Coding**  
+RLS ist eine Lauflängenkodierung. Es wird die Stelle markiert, wenn ein Symbol sich in der Nachricht verändert.  
+**Vorgehensweise**:
+1. auf jeder Linie Pixel durchzählen bis Wechsel. Wenn es auf der ersten und zweiten Zeile immer noch nur weisse gibt, dann diese Anzahl bis die schwarzen vorkommen.  
+Beispiel: Ab erstem Pixel oben links: 31 x Weiss, 2 x Schwarz, 11 x Weiss, 3 x Schwarz, 2 x Weiss, 6 x Schwarz, 6 x Weiss, 6 x Schwarz, 1 x Weiss, 8 x Schwarz, 4 x Weiss
+2. für jede Zeile wiederholen.
+3. die grösste Zahl von allen in dem Fall 31 müssen wir in Binär darstellen. Um zu wissen wie viele Bits für die Zahl wir brauchen macht man: log(31 + 1) / log​(2) = 5 Bits
+4. Anzahl bits pro Zahl von der Formel: 5 Bits. Alle andere Ziffern mit Bits darstellen
+5. Die Zahlen im 5-Bit Binärcode (d.h. beginnt mit Weiss und jedesmal ein Wechsel): 11111 00010 01011 00011 00010 00110 00110 00001 01000 00100.
 
 **LZW Lempel-Ziv-Welch**
+
+**Komprimierungsgrad bestimmen**
 
 ## Verlustbehaftete Kompression  
 
