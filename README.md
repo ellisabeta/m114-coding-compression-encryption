@@ -154,19 +154,46 @@ Beispiel: Ab erstem Pixel oben links: 31 x Weiss, 2 x Schwarz, 11 x Weiss, 3 x S
 
 ## Verlustbehaftete Kompression  
 
-**JPEG-Bildkomprimierung** Joint Photographic Experts Group. ISO/IEC 10918-1. JPEG Komprimierung erlaubt 90% Kompressionsrate ohne sichtbare Informationsverlust.
+Es kommt zu einem Datenverlust bei einer Kompression wenn beim Dekomrimieren entsteht das 100% Abbild des Originals nicht mehr.
 
-Eine Artifakte bei Bildkomprimierung sind sichtbare Unvollkommenheiten (imperfections), die beim rendering entstehen.
+**Komprimierungsverfahren** = die Reduktion der Bildgrösser oder der Farbigkeit.
 
-Die einfachsten Komprimierungsverfahren sind die Reduktion der Bildgrösse oder der Farbigkeit
+**JPEG-Bildkomprimierung** Joint Photographic Experts Group. ISO/IEC 10918-1. JPEG Komprimierung erlaubt 90% Kompressionsrate ohne sichtbaren Informationsverlust. Eine Artifakte bei Bildkomprimierung sind sichtbare Unvollkommenheiten (imperfections), die beim rendering entstehen.  
+Bei hoher Kompression treten folgende Nachteile auf: Unsaubere Textkonturen, Blockartefakte
 
-**Luminanz**
-**Chrominanz**
+Die 5 Schritte:
+1. Umwandung des Farbraums / Color Space Conversion
+2. Chrominanz Unterabtastung / Chrominance Downsampling
+3. Diskrete Kosinus Transformation / Discrete Cosine Transformation
+4. Quantisierung / Quantization
+5. Zick-Zack & RLC & VLC 
 
-**Der Prozess von JPEG-Kompressions-Verfahren**
+**Luminanz** (Y) Luminanz beschreibt die Helligkeitsinformation eines Bildes. Wie hell oder dunkel ein Pixel ist.  
+**Chrominanz** (Cr oder Cb) Chrominanz beschreibt die Farbanteile eines Bildes.Da das menschliche Auge Farbunterschiede weniger genau wahrnimmt als Helligkeitsunterschiede, können Chrominanz-Informationen stärker komprimiert werden. Ist die zentrale Technik in der JPEG-Komprimierung.  
+**Cb** (Blue-Difference Chrominance): wie stark die Farbe Blau vom Helligkeitswert abweicht.  
+**Cr** (Red-Difference Chrominance): wie stark die Farbe Rot vom Helligkeitswert abweicht.
 
-**MPEG**
-**Intra- und Inter-Frame-Kompression**
+**Der Prozess von JPEG-Kompressions-Verfahren**  
+Ein wichtiger Schritt in der JPEG-Kompression ist die Umwandlung des Bildes vom RGB- in den YCrCb-Farbraum. Unterstützt True-Color. Ist verlustbehaftet komprimiert. Die Komprimierung erfolgt hauptsächlich durch Subsampling und Quantisierung (DCT).
+
+**DCT** Diskrete Cosinus Transformation  
+Ist eine der Haupttechniken der JPEG-Komprimierung und dient der Umwandlung von Bildinformationen in Frequenzbereiche zur besseren Datenreduktion.
+
+**MPEG**  
+Moving Picture Experts Group (MPEG). Die MPEG-Komprimierung basiert auf Intra- und Inter-Frame-Kompression.  
+**Intra- und Inter-Frame-Kompression**  
+Intraframe-Kompression reduziert die Bildinformationen ähnlich wie das JPEG-Verfahren.  
+Interframe-Kompression wird durch die Differenzbildung von Bildbereichen erreicht.  
+
+**GOP** = Group Of Pictures.  
+Damit ist eine Bildgruppe gemeint, die mit einem Schlüsselbild (I-Frame oder Vollbild) beginnt. Danach folgen eine gewissen Anzahl B-Frames und P-Frames, bis wieder eine neue Bildgruppe mit startendem I-Frame folgt.
+
+**I-Frame, P-Frame, B-Frame**
+I-Frame → Intraframe-Kompression
+P-Frame → Interframe-Kompression
+I-Frame → Benutzt DCT zur Kompression
+P-Frame → Benutzt nur DPCM zur Kompression
+B-Frame → Benutzt bidirektionale Vorhersage zur differenziellen Kompression
 
 ## Verschlüsselung/ Kryptografie  
 Kryptografie ist die Wissenschaft der Verschlüsselung, Informationssicherheit und der Widerstandsfähigkeit gegen Manipulationen. Verschlüsselung und Entschlüsselung = encryption and decryption.
