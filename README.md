@@ -138,8 +138,8 @@ Wort zu Huffman code muss man einen binären Baum erstellen. Dabei muss man eine
 4. Lies die nächsten Bits und wiederhole den Vorgang.  
 Die Zahl: 0111001000100000111, zuerst geht es nach rechts (0) ist kein Buchstabe und dann zu (1) links, also das ist die erste Buchstabe, dann (1) mal nach links, ist schon die nächste Buchstabe, dann wieder das gleiche usw.
 
-**RLC Run-Length-En/Coding**  
-RLS ist eine Lauflängenkodierung. Es wird die Stelle markiert, wenn ein Symbol sich in der Nachricht verändert.  
+**RLC Run-Length-En/DeCoding**  
+RLC ist eine Lauflängenkodierung. Es wird die Stelle markiert, wenn ein Symbol sich in der Nachricht verändert.  
 **Vorgehensweise**:
 1. auf jeder Linie Pixel durchzählen bis Wechsel. Wenn es auf der ersten und zweiten Zeile immer noch nur weisse gibt, dann diese Anzahl bis die schwarzen vorkommen.  
 Beispiel: Ab erstem Pixel oben links: 31 x Weiss, 2 x Schwarz, 11 x Weiss, 3 x Schwarz, 2 x Weiss, 6 x Schwarz, 6 x Weiss, 6 x Schwarz, 1 x Weiss, 8 x Schwarz, 4 x Weiss
