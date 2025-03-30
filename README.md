@@ -111,6 +111,7 @@ Mantisse = 23 Mal eine 0
 Kompressionsverfahren vor allem bei Bildern, ist wenn der urpsrüngliche Daten reduziert werden. Meistens um redundante Informationen zu entfernen. Umgekehrter Prozess ist Dekompression (Dekomprimierung).  
 Verlustfreie Komprimierung, ist wenn alle Originaldaten zurück gewonnen werden können. Komprimierung = weniger Platz.
 
+**Komprimierungsgrad bestimmen**:  
 **Kompressionsrate K** = (Originalgrösse - Komprimierte Grösse) / OriginalGrösse  
 **Kompressionsfaktor F** = Originalgrösse / Komprimierte Grösse
 
@@ -130,6 +131,13 @@ Wort zu Huffman code muss man einen binären Baum erstellen. Dabei muss man eine
 6. dann erstellt man eine Codetabelle anhand dem Baum mit den binären Ästen  
 **Wichtig** bei Punkt 3. muss man zuerst immer die kleinste Häufigkeit zuerst zusammen zählen.
 
+**Umgekehrt**:
+1. Falls du den Baum nicht hast, brauchst du die Codetabelle, um ihn wieder aufzubauen.
+2. Starte von der Wurzel des Baums und bewege dich nach links (1) oder rechts (0), je nach nächstem Bit.
+3. Sobald du ein Buchstabe erreichst, notiere den Buchstaben und springe zurück zur Wurzel.
+4. Lies die nächsten Bits und wiederhole den Vorgang.  
+Die Zahl: 0111001000100000111, zuerst geht es nach rechts (0) ist kein Buchstabe und dann zu (1) links, also das ist die erste Buchstabe, dann (1) mal nach links, ist schon die nächste Buchstabe, dann wieder das gleiche usw.
+
 **RLC Run-Length-En/Coding**  
 RLS ist eine Lauflängenkodierung. Es wird die Stelle markiert, wenn ein Symbol sich in der Nachricht verändert.  
 **Vorgehensweise**:
@@ -141,8 +149,8 @@ Beispiel: Ab erstem Pixel oben links: 31 x Weiss, 2 x Schwarz, 11 x Weiss, 3 x S
 5. Die Zahlen im 5-Bit Binärcode (d.h. beginnt mit Weiss und jedesmal ein Wechsel): 11111 00010 01011 00011 00010 00110 00110 00001 01000 00100.
 
 **LZW Lempel-Ziv-Welch**
-
-**Komprimierungsgrad bestimmen**
+0..255 Bits ASCII Zeichen, ab 256 Buchstaben ins Wörterbuch. Die Tabelle lautet: Zeichenkette, (Eingang von Text) Gefunden, Gespeichert, Temporärer Wörterbuch.  
+![screenshot](./Aufgaben/images/LZW_transformation.png)
 
 ## Verlustbehaftete Kompression  
 
